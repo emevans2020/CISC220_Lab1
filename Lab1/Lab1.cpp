@@ -1,7 +1,7 @@
 /*
  * Lab1.cpp
  * Emily Evans and help from Paul Ernst for parts of project
- * TA: Lauren
+ * TA: Lauren Olson
  * Feb 14, 2019
  * Due: February 21
  * Lab1
@@ -67,7 +67,7 @@ int main (){
 	cout << "Test Case for Problem 11" << endl;
 	cout << "Problem 11 using 6 to 13" << endl;
 	collatzPtTwo (6, 13);
-	cout << endl;
+	cout << endl; // added a break to make code more readable
 	cout <<"Problem 11 using numbers 5 to 99"<< endl;
 	collatzPtTwo (5, 99);
 	cout << endl;
@@ -89,6 +89,7 @@ void starLine(){
 
 /* Problem 3
  * Purpose: to check whether number is a prime or not
+ * If a number is prime it will return true, otherwise it will return false
  * */
 bool isPrimeNumber(int x){
 	int number = x - 1;
@@ -140,7 +141,11 @@ int sumUpTo(){
 	return num;
 } /* end of sumUpTo */
 
-/* Problem 6 */
+/* Problem 6
+ * Input: A given integer
+ * Purpose: Using a for loop will multiply the given input by numbers 1 up to 12 and
+ * print out the product
+ * */
 void multiplicationTable (int x){
 	int num = x;
 	for (int i = 0; i <= 12; i++) {
@@ -227,12 +232,16 @@ void starx(int num){
 	}
 } // end of starx
 
-/* Problem 11 */
+/* Problem 11
+ * Input: two different numbers assuming first number is smaller than second
+ * Purpose: checking each number in between two numbers provided and checking to see
+ * if the Collatz Conjecture works on each one
+ *  */
 void collatzPtTwo (int a, int b){
 	int numbtwn;
 	for (int num = a+1; num < b; num ++) {
 		numbtwn = num;
-		while (numbtwn != 1) {
+		while (numbtwn != 1) { //The following is just the Collatz Conjecture formula
 			if (numbtwn % 2 == 0){
 				numbtwn = numbtwn/2;
 			}
@@ -240,6 +249,8 @@ void collatzPtTwo (int a, int b){
 				numbtwn = (numbtwn * 3) + 1;
 			}
 		}
-		cout << "Collatz Conjecture is still working" << endl;
+		cout << "Collatz Conjecture is still working" << endl; /*
+		each time the Collatz is done on the number it will print out that the Collatz
+		Conjecture still works */
 	}
 }
