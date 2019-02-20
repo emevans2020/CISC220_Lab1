@@ -22,7 +22,7 @@ void multiplication();
 int collatzConj ();
 void isLeapYear();
 void starx(int num);
-
+void collatzPtTwo (int a, int b);
 /* end of function declarations */
 
 int main (){
@@ -65,7 +65,14 @@ int main (){
 	cout << endl;
 	starLine();
 	cout << "Test Case for Problem 11" << endl;
-
+	cout << "Problem 11 using 6 to 13" << endl;
+	collatzPtTwo (6, 13);
+	cout << endl;
+	cout <<"Problem 11 using numbers 5 to 99"<< endl;
+	collatzPtTwo (5, 99);
+	cout << endl;
+	cout << "Problem 11 using numbers 2 to 44" << endl;
+	collatzPtTwo (2, 44);
 	return 0;
 }
 
@@ -222,14 +229,17 @@ void starx(int num){
 
 /* Problem 11 */
 void collatzPtTwo (int a, int b){
-	int num = 300;
-	int total = 0;
-	while (num >0) {
-		total += num;
-		num --;
-		if (num%20 == 0) {
-			cout << total << endl;
+	int numbtwn;
+	for (int num = a+1; num < b; num ++) {
+		numbtwn = num;
+		while (numbtwn != 1) {
+			if (numbtwn % 2 == 0){
+				numbtwn = numbtwn/2;
+			}
+			else if (numbtwn % 2 == 1){
+				numbtwn = (numbtwn * 3) + 1;
+			}
 		}
+		cout << "Collatz Conjecture is still working" << endl;
 	}
 }
-
